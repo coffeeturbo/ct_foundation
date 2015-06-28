@@ -1,15 +1,30 @@
 @import "settings";
 @import "foundation";
 
+* {
+/**Управляем плавным переходом кнопок**/
+  transition: color 300ms ease-out;
+  transition: background 300ms ease-out;
+}
+
+@mixin black-shadow {
+  -webkit-box-shadow: 0px 0px 4px 3px rgba(0, 0, 0, 0.32);
+  -moz-box-shadow:    0px 0px 4px 3px rgba(0, 0, 0, 0.32);
+  box-shadow:         0px 0px 4px 3px rgba(0, 0, 0, 0.32);
+}
 
 .large-row {
   @include grid-row(nest-collapse);
 }
 
+/*
+* HEADE
+*/
 header.large-row {
+  @include black-shadow();
   background: $blue;
-//  color: $oil;
   .white-row {
+    @include black-shadow();
     margin:10px 0 10px 0;
     background: $white;
   }
@@ -21,10 +36,10 @@ header.large-row {
   .top-bar {
     .title-area:hover {
       .logo {
-        transform: translate(158px, 0);
-        -webkit-transform: translate(158px, 0); /** Chrome & Safari **/
-        -o-transform: translate(158px, 0); /** Opera **/
-        -moz-transform: translate(158px, 0); /** Firefox **/
+        transform: translate(158px, 0)          scale(1.5, 1.5);
+        -webkit-transform: translate(158px, 0)  scale(1.5, 1.5); /** Chrome & Safari **/
+        -o-transform: translate(158px, 0)       scale(1.5, 1.5); /** Opera **/
+        -moz-transform: translate(158px, 0)     scale(1.5, 1.5); /** Firefox **/
       }
 
       .name {
@@ -64,17 +79,40 @@ header.large-row {
     padding: rem-calc(5);
     margin-bottom: rem-calc(10);
   }
+
+  /**
+  * Хлебные крошки
+  */
+  .breadcrumbs {
+    background: $panel-bg;
+    margin: 10px 0 10px 0;
+  }
+
+
+  .pagination {
+    @extend .rounded;
+    background: $panel-bg;
+    li {
+      margin: rem-calc(3) 0 rem-calc(3) 0;
+    }
+  }
 }
 
 .rounded {
   -webkit-border-radius: $global-radius;
   -moz-border-radius: $global-radius;
   border-radius: $global-radius;
+
+  -webkit-box-shadow: 0px 0px 3px 0px $steel;
+  -moz-box-shadow:    0px 0px 3px 0px $steel;
+  box-shadow:         0px 0px 3px 0px $steel;
 }
 
 /*
 * footer
 */
 footer {
+  @include black-shadow();
+
   background: $blue;
 }
