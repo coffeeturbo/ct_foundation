@@ -980,7 +980,7 @@ $panel-border-size: 0px;
 // We use these to set default inner padding and bottom margin
 $panel-margin-bottom: rem-calc(10);
 .panel {
-  margin: rem-calc(10) 0 $panel-margin-bottom 0;
+  margin: rem-calc(0) 0 $panel-margin-bottom 0;
 }
 // $panel-padding: rem-calc(20);
 
@@ -1145,13 +1145,13 @@ $panel-margin-bottom: rem-calc(10);
 // 26. Side Nav
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// $include-html-nav-classes: $include-html-classes;
+ $include-html-nav-classes: $include-html-classes;
 
 // We use this to control padding.
 // $side-nav-padding: rem-calc(14 0);
 
 // We use these to control list styles.
-// $side-nav-list-type: none;
+// $side-nav-list-type: circle;
 // $side-nav-list-position: outside;
 // $side-nav-list-margin: rem-calc(0 0 7 0);
 
@@ -1221,7 +1221,7 @@ $panel-margin-bottom: rem-calc(10);
 // 28. Sub Nav
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// $include-html-nav-classes: $include-html-classes;
+ //$include-html-nav-classes: $include-html-classes;
 
 // We use these to control margin and padding
 // $sub-nav-list-margin: rem-calc(-4 0 18);

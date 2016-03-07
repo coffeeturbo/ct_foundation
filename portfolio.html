@@ -4,8 +4,18 @@
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<title>Мой проект</title>
+	<link rel="shortcut icon" href="assets/img/favicon2.ico">
 	<link rel="stylesheet" href="css/app.css"/>
 	<script src="bower_components/modernizr/modernizr.js"></script>
+
+	<script type="text/javascript" src="js/sh/shCore.js"></script>
+	<script type="text/javascript" src="js/sh/shBrushJScript.js"></script>
+	<script type="text/javascript" src="js/sh/shBrushBash.js"></script>
+	<link type="text/css" rel="stylesheet" href="css/sh/shCoreDefault.css"/>
+	<script type="text/javascript">
+		SyntaxHighlighter.all();
+		SyntaxHighlighter.defaults.toolbar = false;
+	</script>
 </head>
 <body>
 <!--Шапка навигация-->
@@ -16,7 +26,8 @@
 				<nav class="top-bar" data-topbar role="navigation">
 					<ul class="title-area">
 						<li class="logo left">
-							<img  width="33" src="assets/img/logo_snail.svg" alt="CoffeeTurbo logotipe"/>
+							<a href="/"><img width="33" src="assets/img/logo_snail.svg"
+															alt="CoffeeTurbo logotipe"/></a>
 						</li>
 						<li class="name left">
 							<h2>COFFEE TURBO</h2>
@@ -65,11 +76,23 @@
 						<img src="assets/img/img1.jpg">
 					</div>
 					<hr/>
-					<p>
-					<h2>Навыки которыми владею</h2></p>
+
+					<pre class="brush: bash;">
+						emerge dev-php/pecl-gearman -pv
+					</pre>
+					<pre class="brush: js;">
+						function helloSyntaxHighlighter()
+						{
+								return "hi!";
+						}
+					</pre>
+
+
+					<p><h2>Навыки которыми владею</h2></p>
 					<ul class="accordion" data-accordion>
 						<li class="accordion-navigation">
 							<a href="#panel1a">PHP</a>
+
 							<div id="panel1a" class="content active">
 								<ul>
 									<li>Знание и практический опыт применения
@@ -101,6 +124,7 @@
 						</li>
 						<li class="accordion-navigation">
 							<a href="#panel2a">JAVA SCRIT</a>
+
 							<div id="panel2a" class="content">
 								<ul>
 									<li>Базовое владение на уровне jQuery.</li>
@@ -111,6 +135,7 @@
 						</li>
 						<li class="accordion-navigation">
 							<a href="#panel3a">SQL</a>
+
 							<div id="panel3a" class="content">
 								<ul>
 									<li>Опыт работы с MYSQL InnoDB / MYISAM,
@@ -134,15 +159,6 @@
 					</ul>
 				</article>
 			</div>
-			<div class="row">
-
-			</div>
-
-			<div class="medium-12">
-				<h2>Php</h2>
-
-			</div>
-
 
 			<div class="row">
 				<ul class="pagination clearfix ">
@@ -158,7 +174,6 @@
 				</ul>
 			</div>
 		</div>
-
 
 		<!--Боковая панель навигации-->
 		<aside class="small-12 medium-4 columns">

@@ -13,16 +13,32 @@
   box-shadow:         0px 0px 4px 3px rgba(0, 0, 0, 0.32);
 }
 
+/**
+* Поведение для тегов
+*/
+@mixin tag_behaviar {
+  a {
+    @extend .rounded;
+    padding: 4px 6px;
+  }
+  a:hover {
+    @extend .rounded;
+    color: $white;
+    background: $orange;
+  }
+}
+
 .large-row {
   @include grid-row(nest-collapse);
 }
 
 /*
-* HEADE
+* HEADER
 */
 header.large-row {
   @include black-shadow();
   background: $blue;
+  margin-bottom: rem-calc(10);
   .white-row {
     @include black-shadow();
     margin:10px 0 10px 0;
@@ -64,6 +80,21 @@ header.large-row {
           font-family: Tahoma;
           font-size: 16px;
           color: $oil;
+
+          a {
+
+            font-family: 'Segoe Script';
+            padding:0;
+            width: auto;
+          }
+
+          a:active {
+            margin-top: 1px;
+          }
+          a:hover {
+            font-weight: 300;
+            color: $orange;
+          }
         }
       }
     }
@@ -78,6 +109,10 @@ header.large-row {
     background: $white;
     padding: rem-calc(5);
     margin-bottom: rem-calc(10);
+
+    .tags {
+      @include tag_behaviar();
+    }
   }
 
   /**
@@ -85,34 +120,60 @@ header.large-row {
   */
   .breadcrumbs {
     background: $panel-bg;
-    margin: 10px 0 10px 0;
+    margin: 0px 0 10px 0;
   }
 
 
   .pagination {
     @extend .rounded;
+    @extend .shadowed;
     background: $panel-bg;
     li {
       margin: rem-calc(3) 0 rem-calc(3) 0;
     }
   }
+
+
+
+  /**
+  * SIDEBAR
+  */
+  aside {
+
+    // боковая навигация
+    .side-nav ul {
+
+    }
+
+    .tagcloud {
+      @include tag_behaviar();
+    }
+  }
+
+
+
+  /*
+  * footer
+  */
+  footer {
+    @include black-shadow();
+    background: $blue;
+  }
+
 }
 
 .rounded {
   -webkit-border-radius: $global-radius;
   -moz-border-radius: $global-radius;
   border-radius: $global-radius;
+}
 
+.shadowed {
   -webkit-box-shadow: 0px 0px 3px 0px $steel;
   -moz-box-shadow:    0px 0px 3px 0px $steel;
   box-shadow:         0px 0px 3px 0px $steel;
 }
 
-/*
-* footer
-*/
-footer {
-  @include black-shadow();
 
-  background: $blue;
-}
+
+
